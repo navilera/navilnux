@@ -1,0 +1,189 @@
+#
+#  ezBoot 메인 메이크 화일 
+#
+
+SRCS = entry.S lib1funcs.S main.c serial.c time.c gpio.c mx29lvx.c \
+       cs8900.c bootp_cmd.c net.c tftp_cmd.c go_cmd.c config.c\
+       zmodem.c ram_cmd.c zmodem_cmd.c flash_cmd.c nand.c \
+       printf.c vsprintf.c vscanf.c string.c 
+
+OBJS = entry.o lib1funcs.o main.o serial.o time.o gpio.o mx29lvx.o \
+       cs8900.o bootp_cmd.o net.o tftp_cmd.o go_cmd.o config.o\
+       zmodem.o ram_cmd.o zmodem_cmd.o flash_cmd.o nand.o \
+       printf.o vsprintf.o vscanf.o string.o 
+
+TARGET      = main_org
+PRE_TARGET  = main-elf32
+
+%.o:%.c
+	@echo "Compiling $< ..."
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+#
+# Compilation target for C++ files
+#
+%.o:%.S
+	@echo "Assembler compiling $< ..."
+	$(CC) -c $(CFLAGS)  -o $@ $<
+
+
+all : $(PRE_TARGET)
+	$(OC) $(OCFLAGS) $(PRE_TARGET) $(TARGET)
+
+$(PRE_TARGET) : $(OBJS)
+	$(LD) $(MAIN_LDFLAGS) -o $@ $(OBJS) 
+
+clean:
+	rm -f *.o
+	rm -f *.s
+	rm -f $(PRE_TARGET)
+	rm -f $(TARGET)
+	
+dep:
+	$(DEP) $(INCLUDES) $(SRCS)
+
+# DO NOT DELETE
+entry.o: entry.s
+lib1funcs.o: lib1funcs.s
+main.o: main.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h \
+  /project/ez-x5/ezboot/v12_org/include/cs8900.h \
+  /project/ez-x5/ezboot/v12_org/include/flash.h \
+  /project/ez-x5/ezboot/v12_org/include/mx29lvx.h \
+  /project/ez-x5/ezboot/v12_org/include/nand.h \
+  /project/ez-x5/ezboot/v12_org/include/main.h
+serial.o: serial.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h
+time.o: time.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h
+gpio.o: gpio.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h
+mx29lvx.o: mx29lvx.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/mx29lvx.h
+cs8900.o: cs8900.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h \
+  /project/ez-x5/ezboot/v12_org/include/cs8900.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h
+bootp_cmd.o: bootp_cmd.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/cs8900.h \
+  /project/ez-x5/ezboot/v12_org/include/net.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h
+net.o: net.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/cs8900.h \
+  /project/ez-x5/ezboot/v12_org/include/net.h
+tftp_cmd.o: tftp_cmd.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h \
+  /project/ez-x5/ezboot/v12_org/include/cs8900.h \
+  /project/ez-x5/ezboot/v12_org/include/net.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h \
+  /project/ez-x5/ezboot/v12_org/include/flash.h \
+  /project/ez-x5/ezboot/v12_org/include/mx29lvx.h \
+  /project/ez-x5/ezboot/v12_org/include/nand.h
+go_cmd.o: go_cmd.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h
+config.o: config.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/flash.h \
+  /project/ez-x5/ezboot/v12_org/include/mx29lvx.h \
+  /project/ez-x5/ezboot/v12_org/include/nand.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h
+zmodem.o: zmodem.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/zmodem.h
+ram_cmd.o: ram_cmd.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h
+zmodem_cmd.o: zmodem_cmd.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/zmodem.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h \
+  /project/ez-x5/ezboot/v12_org/include/flash.h \
+  /project/ez-x5/ezboot/v12_org/include/mx29lvx.h \
+  /project/ez-x5/ezboot/v12_org/include/nand.h
+flash_cmd.o: flash_cmd.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/config.h \
+  /project/ez-x5/ezboot/v12_org/include/flash.h \
+  /project/ez-x5/ezboot/v12_org/include/mx29lvx.h \
+  /project/ez-x5/ezboot/v12_org/include/nand.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h
+nand.o: nand.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h \
+  /project/ez-x5/ezboot/v12_org/include/mem_map.h \
+  /project/ez-x5/ezboot/v12_org/include/nand.h
+printf.o: printf.c /project/ez-x5/ezboot/v12_org/include/pxa255.h \
+  /project/ez-x5/ezboot/v12_org/include/time.h \
+  /project/ez-x5/ezboot/v12_org/include/gpio.h \
+  /project/ez-x5/ezboot/v12_org/include/serial.h \
+  /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h
+vsprintf.o: vsprintf.c /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h
+vscanf.o: vscanf.c /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h \
+  /project/ez-x5/ezboot/v12_org/include/string.h
+string.o: string.c /project/ez-x5/ezboot/v12_org/include/stdio.h \
+  /project/ez-x5/ezboot/v12_org/include/stdarg.h

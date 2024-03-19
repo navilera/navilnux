@@ -1,0 +1,6 @@
+start.o: start.S /project/ez-x5/ezboot/x5.v14.org/include/ez_x5.h
+gpio.o: gpio.S /project/ez-x5/ezboot/x5.v14.org/include/ez_x5.h
+memory.o: memory.S /project/ez-x5/ezboot/x5.v14.org/include/ez_x5.h
+tiny_serial.o: tiny_serial.S \
+  /project/ez-x5/ezboot/x5.v14.org/include/ez_x5.h \
+  /project/ez-x5/ezboot/x5.v14.org/include/tiny_serial.h

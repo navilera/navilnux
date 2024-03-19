@@ -1,0 +1,165 @@
+entry.o: entry.S
+lib1funcs.o: lib1funcs.S
+main.o: main.c /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/cs8900.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash_29lvx.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/nand.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/main.h
+serial.o: serial.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h
+time.o: time.c /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h
+gpio.o: gpio.c /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h
+flash_29lvx.o: flash_29lvx.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash_29lvx.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h
+cs8900.o: cs8900.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/cs8900.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h
+arp_cmd.o: arp_cmd.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/cs8900.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/net.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h
+net.o: net.c /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/cs8900.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/net.h
+tftp_cmd.o: tftp_cmd.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/cs8900.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/net.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash_29lvx.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/nand.h
+go_cmd.o: go_cmd.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h
+config.o: config.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash_29lvx.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/nand.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h
+help.o: help.c /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h
+zmodem.o: zmodem.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/zmodem.h
+ram_cmd.o: ram_cmd.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h
+zmodem_cmd.o: zmodem_cmd.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/zmodem.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash_29lvx.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/nand.h
+flash_cmd.o: flash_cmd.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/flash_29lvx.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/nand.h
+nand.o: nand.c /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/mem_map.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/config.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/nand.h
+printf.o: printf.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/pxa255.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/time.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/gpio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/serial.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h
+vsprintf.o: vsprintf.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h
+vscanf.o: vscanf.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/string.h
+string.o: string.c \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdio.h \
+  /home/maanu/프로젝트/navilnux/ezboot/include/stdarg.h

@@ -1,0 +1,4 @@
+start.o: start.S /home/maanu/프로젝트/navilnux/ezboot/include/ez_x5.h
+gpio.o: gpio.S /home/maanu/프로젝트/navilnux/ezboot/include/ez_x5.h
+memory.o: memory.S \
+  /home/maanu/프로젝트/navilnux/ezboot/include/ez_x5.h
